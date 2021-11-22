@@ -1,6 +1,7 @@
-# Esercizi in C
+# C coding
 ![coding gif](coding-freak.gif)
-la repository ha lo scopo ri archiviare gli esercizi in C fatti in classe.
+
+in questa repository verranno salvati gli esercizi in C fatti a scuola e i compiti.
 
 
 # Mattia Baroni
