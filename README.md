@@ -4,10 +4,15 @@
 in questa repository verranno salvati gli esercizi in C fatti a scuola e i compiti.
 
 # Spiegazione esercizi:
+  
+  -4_5_6_7p210: il programma ha lo scopo di far pratica con la funzione SWITCH-CASE, ovvero racchiudere (in questo caso) più micro programmi in uno singolo,
+  
   -5 prezzi sonto: richiede cinque ipotetici prezzi, calcola il totale e se è superiore a 50, calcola-visualizza e applicauno sconto del 25%, comunicando il nuovo totale,
  
-  -4_5_6_7p210: il programma ha lo scopo di far pratica con la funzione SWITCH-CASE, ovvero racchiudere (in questo caso) più micro programmi in uno singolo,
- 
+  -calcolo secondi: fa inserire ore minuti e secondi e trasforma tutto in secondi,
+  
+  -es186_9: richiede 3 numeri e 
+  
   -gradaz.alcolica: il programma richiede un valore (nonchè la graduazione alcolica), e compara secondo i seguenti parametri:
     
     40 < g : printf "superalcolico";
