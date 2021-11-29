@@ -91,7 +91,10 @@ int main () {
                     printf ("\n il triangolo è equilatero");
                 }
                 else if ((C1 == C2) ^ (C2 == C3)) {
-                    printf ("il triangolo è isoscele");
+                    printf ("\nil triangolo è isoscele");
+                }
+                else {
+                  printf("\nil triangolo è isoscele");
                 }
 
                 break;
