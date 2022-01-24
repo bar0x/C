@@ -1,0 +1,10 @@
+/* 
+Creare un programma che inizializza un vettore di 20 elementi con valori
+random compreso tra 1 e 50 quindi:
+
+1: visualizza tutti i vallori presenti,
+2: visualizza solo i valori pari,
+3: conta quanti valori sono dispari,
+4: calcola la media del vettore,
+5: richiesrto un valore da tastiera, visualizzare solo quei valori del vettore che sono>= del valore inserito.
+*/
