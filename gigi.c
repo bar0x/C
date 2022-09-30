@@ -4,8 +4,8 @@
    x Input da tastiera di un vettore di interi.
    x visualizzazione di un vettore.
    x visualizzazione al contrario.
-   - ricerca di un valore (ritorno 0/1 in caso negativo o positivo)
-   - calcolo del valor medio
+   x ricerca di un valore (ritorno 0/1 in caso negativo o positivo)
+   x calcolo del valor medio
    - azzeramento di una cella scelta da utente.
    - scambio tra due celle scelte dall'utente.
    - ordinamento di un vettore.
@@ -14,8 +14,9 @@
    ATTENZIONE:
    per ogni punto è richiesta una funzione specifica.
 */
-#include <stdio.h>
 
+#include <stdio.h>
+#include <stdbool.h>
 #define DIM 5
 
 /* Prototipi delle funzioni */
@@ -45,25 +46,37 @@ void printVettoreContrario(int[], int);
  * @param int grandezza del vettore.
  * @param int valore da cercare.
  */
-void search4val(int[], int, int);
-
-
+bool search4val(int[], int, int);
+/**
+ * @brief funzione che dato un vettore e la sua dimensione torna la media dei valori
+ * @param int[] vettore da utilizzare;
+ * @param int dimensione del vettore;
+ * @return int media dei valori.
+ */
+float mediumVal(int [], int);
+/**
+ * @brief funzione che cancella la cella dell'indice scelto;
+ * @param int[] vettore,
+ * @param int grandezza del vettore,
+ * @param int indice della cella da azzerare.
+ */
+void eraseCell(int[], int, int);
 
 /* MAIN PROGRAM */
 int main(){
    int vet[DIM];
    
 
-    inputVettore(vet, DIM);
-    printVettore(vet, DIM);
-    printVettoreContrario(vet, DIM);
+   inputVettore(vet, DIM);
+   printVettore(vet, DIM);
+   printVettoreContrario(vet, DIM);
     
-    if (search4val(vet, DIM, ))
-        printf("1");
-    else
-        printf ("0");
+   printf ("\n search4val ritorna %d", search4val(vet, DIM, 5));
 
+   printf("il valore medio del vettore è: %f\n", mediumVal(vet, DIM));
    
+   eraseCell(vet, DIM, 5);
+
    return(0);
 }
 
@@ -84,20 +97,43 @@ void printVettore(int _v[], int _d){
    }
 }
 
-void printVettoreContrario(int v[], int dim){
+void printVettoreContrario(int v[], int _d){
     int i;
     printf ("\n");
-    for (i= dim-1;i >= 0;i--){
+    for (i= _d-1;i >= 0;i--){
         printf ("[%4d]", v[i]);
     }
         
 }
 
-void search4val(int v[], int dim , int val){
-    for (int i= 0; i> dim-1; i++){
-        if (val == v[i])
+bool search4val(int v[], int _d , int val){
+    int j;
+    for (j= 0; j < _d; j++){
+         if (v[j] == val)
             return true;
     }
     return false;
 }
 
+float mediumVal(int v[], int _d){
+   float tot_val=0;
+   float medium;
+   for(int i=0; i< _d; i++){
+      tot_val+= v[i];
+   }
+   
+   medium = tot_val / _d-1;
+   return (medium);
+}
+
+void eraseCell(int v[], int _d, int val){
+   printf ("quale cella vuoi cancellare? ");
+   scanf ("%d", &val);
+   fflush(stdin);
+
+   for (int i=0; i < _d; i++){
+      if (val == v[i])
+         v[i] = 0;
+         printf ("cella %d azzerata", v[i]);
+   }
+}
