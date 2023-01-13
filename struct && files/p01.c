@@ -1,7 +1,7 @@
 /* Realizzare un programma che grazie alla struttura studente composta da: nome, cognome, anno di nascita, gestisca 
 un elenco di massimo 10 studenti garantendo le seguenti funzionalita
 x - inserimento nuovo studente,
-2 - visualizzazione lista studenti,
+x - visualizzazione lista studenti,
 3 - modifica di uno studente,
 4 - cancellazione di uno studente,
 5 - ricerca di uno studente (scelto per cognome).
@@ -47,7 +47,7 @@ void viewStudent();
  * @param int: numero di studenti già registrati, 
  * @param int: numero di studenti massimi.
  */
-void modifyStudent(struct studente[], int*, int);
+void modifyStudent(struct studente[], int*, int, int*);
 
 
 
@@ -69,6 +69,7 @@ int main(){
         
         printf ("scelta: ");
         scanf ("%d",&scelta);
+        printf ("\n");
 
         switch(scelta){
             case 1:
@@ -78,10 +79,9 @@ int main(){
                 viewStudent(max_studenti, &studReg);
                 break;
             case 3:
-                newStudent(max_studenti, &studReg, MAX_STUD, &ErrorFx);
+                modifyStudent(max_studenti, &studReg, MAX_STUD, &ErrorFx);
                 if (ErrorFx == 1)
-                    newStudent(max_studenti, &studReg, MAX_STUD, &ErrorFx);
-
+                    modifyStudent(max_studenti, &studReg, MAX_STUD, &ErcrorFx);
                 break;
             case 4:
                 break;
@@ -105,17 +105,15 @@ void newStudent(struct studente _max_studenti[MAX_STUD], int *_studReg, int _MAX
         printf("numero massimo di studenti raggiunto!");
 
     else{
-
         printf("inserisci il nome dello studente:\n");
         scanf("%s", _max_studenti[*_studReg].nome);
-        
+
         printf("\n\ninserisci il cognome dello studente:\n");
         scanf("%s", _max_studenti[*_studReg].cognome);
-
+        
         printf("\n\ninserisci l'anno di nascita dello studente\n");
         scanf("%d", &_max_studenti[*_studReg].anno_nascita);
         
-
         printf ("\ninserimento avvenuto con successo!\n");
         //incremento numero di studenti registrati
         (*_studReg)++;
@@ -134,8 +132,6 @@ void viewStudent(struct studente _max_studenti[MAX_STUD], int *_studReg){
     }
 }
 
-
-
 void modifyStudent(struct studente _max_studenti[MAX_STUD], int *_studReg, int _MAX_STUD, int *_ErrorFx){
     int scelta = 0;
 
@@ -147,10 +143,12 @@ void modifyStudent(struct studente _max_studenti[MAX_STUD], int *_studReg, int _
 
     printf("\nselezionare il numero dello studente da modificare: ");
 
-    for(int i = 0; i < *_studReg; i++){
-        printf("[%d] %s %s, %d", i, _max_studenti[i].nome, _max_studenti[i].cognome, _max_studenti[i].anno_nascita);
+    printf("\n\n\nstud reg: %d\n\n\n", *_studReg);
+    for (int i = 0; i < *_studReg; i++){
+        printf("[%d] %s %s, %d \n", i, _max_studenti[i].nome, _max_studenti[i].cognome, _max_studenti[i].anno_nascita);
     }
 
+    printf("\n inserisci il numero dell'utente da modificare: ");
     scanf("%d", &scelta);
 
     if (scelta == 0 || scelta > *_studReg){
@@ -158,6 +156,7 @@ void modifyStudent(struct studente _max_studenti[MAX_STUD], int *_studReg, int _
         *_ErrorFx = 1;
         return;
     }
+
 
 
     //fine funzione *_ErrorFx = 0; or error
