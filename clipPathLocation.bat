@@ -1,0 +1,1 @@
+ECHO | SET /P=$env:Path='C:\Program Files (x86)\Dev-Cpp\MinGW64\bin;' + $env:Path | CLIP
