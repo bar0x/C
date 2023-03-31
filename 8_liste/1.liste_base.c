@@ -142,6 +142,3 @@ Nodo* pushInPos(Nodo* _head, int pos, int val){
         return t;
     }
 }
-
-
-//ciao
