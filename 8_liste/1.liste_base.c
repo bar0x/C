@@ -7,6 +7,9 @@ typedef struct nodo{
     struct nodo *next;
 }Nodo;
 
+//prova commentazione nuovo codice
+
+
 // Dichiarazione dei prototipi
 Nodo* addTesta(Nodo *, int);
 void showLista(Nodo *);
