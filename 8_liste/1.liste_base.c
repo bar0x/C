@@ -7,7 +7,6 @@ typedef struct nodo{
     struct nodo *next;
 }Nodo;
 
-//prova git
 
 // Dichiarazione dei prototipi
 Nodo* addTesta(Nodo *, int);
