@@ -9,6 +9,7 @@ typedef struct nodo{
 
 /* Declaration of prototypes */ 
 
+//gigi prova ad uploadare
 /**
  * @brief Add a new node to the head of the list.
  * @param Nodo* Pointer to the head.
