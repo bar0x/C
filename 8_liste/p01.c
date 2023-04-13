@@ -248,6 +248,12 @@ Nodo* pushAtPos(Nodo* _head, int pos, int val){
 		x->next = box;
 		return (_head);
 	}
-	
-	
+}
+
+Nodo* mergeList (Nodo* head1, Nodo* head2){ //la funzione scorre head1 fino alla coda, per poi sostituire il NULL di head1->next con l'indirizzo di testa di head2.
+	Nodo* tmp = head1;		//salvo l'indirizzo di coda di head1, poichè scorrendo la coda col while si perde l'indirizzo della testa.
+	while (head1->netx != NULL)
+		head1 = head1->next;
+	head1->next = head2;
+	return tmp;		//ritorno la testa della prima lista.
 }
