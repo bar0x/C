@@ -8,6 +8,7 @@ typedef struct nodo{
 }Nodo;
 
 /* Declaration of prototypes */ 
+
 /**
  * @brief Add a new node to the head of the list.
  * @param Nodo* Pointer to the head.
@@ -15,27 +16,32 @@ typedef struct nodo{
  * @return Return the new head of the list.
 */
 Nodo* addTesta(Nodo *, int);
+
 /**
  * @brief Show all nodes of a list.
  * @param Nodo* Pointer to the head.
 */
 void showLista(Nodo *);
+
 /**
  * @brief Show all nodes of a list with recursive function.
  * @param Nodo* Pointer to the head.
 */
 void showListaRecursive(Nodo *);
+
 /**
  * @brief Show a list from the tail to the head with a recursive function.
  * @param Nodo* Pointer to the head.
 */
 void showListaReversedRecursive(Nodo *);
+
 /**
  * @brief Extract a node from the head of the list, check if the list exist.
  * @param Nodo* Pointer to the head.
  * @return New reference to the head.
 */
 Nodo* popTesta(Nodo *);
+
 /**
  * @brief Add a new node the the tail of the list.
  * @param Nodo* Pointer to the head.
@@ -43,6 +49,7 @@ Nodo* popTesta(Nodo *);
  * @return Nodo* New reference to the head.
 */
 Nodo* pushCoda(Nodo *, int );
+
 /**
  * @brief Search and return the min or max value, min or max selected by user with a flag as parameter.
  * @param Nodo* Pointer to the head.
@@ -50,12 +57,14 @@ Nodo* pushCoda(Nodo *, int );
  * @return The searched value
 */
 int ricercaMaxMinLista(Nodo *, int);
+
 /**
  * @brief Count and return the number of nodes of a list.
  * @param Nodo* Pointer to the head.
  * @return The number of nodes of a list.
 */
 int contaNodi(Nodo*);
+
 /**
  * @brief Add a new node into a specific position of the list.
  * @param Nodo* Pointer to the head.
@@ -64,6 +73,7 @@ int contaNodi(Nodo*);
  * @return Return the new head of the list.
 */
 Nodo* pushAtPos(Nodo*, int, int);
+
 
 // ### MAIN PROOGRAM ###
 int main(){
@@ -104,6 +114,7 @@ Nodo* addTesta(Nodo *_testa, int _val){
     tmp->val = _val;
     return(tmp);
 }
+
 void showLista(Nodo *_testa){
     Nodo *tmp;
     tmp = _testa;
@@ -112,11 +123,13 @@ void showLista(Nodo *_testa){
         tmp = tmp->next;
     }
 }
+
 /*
 Address: 11605616; val: 9, next: 11612120
 Address: 11612120; val: 7, next: 11612104
 Address: 11612104; val: 5, next: 0
 */
+
 
 void showListaRecursive(Nodo *_tmp){
     if(_tmp != NULL){
@@ -124,12 +137,14 @@ void showListaRecursive(Nodo *_tmp){
         showListaRecursive(_tmp->next);
     }
 }
+
 void showListaReversedRecursive(Nodo *_tmp){
     if(_tmp != NULL){
         showListaReversedRecursive(_tmp->next);
         printf("Address: %d; val: %d, next: %d\n", _tmp, _tmp->val, _tmp->next);        
     }
 }
+
 Nodo* popTesta(Nodo *_head){
 	if(_head == NULL)
 		return NULL;
@@ -137,6 +152,7 @@ Nodo* popTesta(Nodo *_head){
 	free(_head);
 	return _nh;
 }
+
 Nodo* pushCoda(Nodo *_head, int _val){
 	Nodo *_tmp = _head;	// Nodo temporaneo di appoggio per scorrere lista
 	Nodo *_nt = (Nodo*) malloc(sizeof(Nodo));	// New tail
@@ -153,6 +169,7 @@ Nodo* pushCoda(Nodo *_head, int _val){
 	_tmp->next = _nt;
 	return _head;
 }
+
 int ricercaMaxMinLista(Nodo *_head, int _scelta){
 	// scelta == 0, minimo
 	// scelta == 1, massimo
@@ -181,6 +198,7 @@ int ricercaMaxMinLista(Nodo *_head, int _scelta){
 	}
 	return -1;		// se lista vuota
 }
+
 int contaNodi(Nodo* _head){
 	int cnt = 0;	// numero nodi
 	Nodo* _tmp = _head;	// nodo tmp per scorrere
@@ -190,6 +208,7 @@ int contaNodi(Nodo* _head){
 	}
 	return cnt;		// ritorno numero nodi
 }
+
 Nodo* pushAtPos(Nodo* _head, int pos, int val){
 	/*
 	Nodo* nPos = malloc(sizeof(Nodo));
