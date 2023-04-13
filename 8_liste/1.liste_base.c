@@ -7,6 +7,7 @@ typedef struct nodo{
     struct nodo *next;
 }Nodo;
 
+
 // Dichiarazione dei prototipi
 Nodo* addTesta(Nodo *, int);
 void showLista(Nodo *);
@@ -20,6 +21,8 @@ void showListaReversedRecursive(Nodo *);
 */
 int ricercaMaxMinLista(Nodo *, int);
 int contaNodi(Nodo*);
+
+
 
 // ### MAIN PROOGRAM ###
 int main(){
@@ -142,5 +145,4 @@ Nodo* pushInPos(Nodo* _head, int pos, int val){
     }
 }
 
-
-//hello
+void 
