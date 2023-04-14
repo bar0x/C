@@ -57,6 +57,6 @@ void showLista(Nodo *_testa){
     tmp = testa;
     while (tmp != NULL){
         tmp = tmp->next;
-
+        printf("%s, %s, %d", x.n, x.c, x.a);
     }
 }
