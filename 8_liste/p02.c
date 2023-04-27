@@ -60,3 +60,5 @@ void showLista(Nodo *_testa){
         printf("%s, %s, %d", x.n, x.c, x.a);
     }
 }
+
+void 
