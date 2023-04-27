@@ -86,12 +86,7 @@ Nodo* removeHead(Nodo *head){
 
 Nodo* pushCoda(Nodo *_Head, int val){
     Nodo *tmp1 =  _head;
-    Nodo *tmp2 = (Nodo*) malloc (sizeof(Nodo));
-    
-    if (tmp = NULL){
-            
-    }
-    
+    Nodo *tmp2 = (Nodo*) malloc (sizeof(Nodo));        
 }
 
 int ricercaMaxMinLista(Nodo *_head, int _scelta){
