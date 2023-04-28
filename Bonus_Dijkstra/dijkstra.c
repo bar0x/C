@@ -35,7 +35,7 @@ Nodo* pushCoda(Nodo *_head, Arco n){
 	return _head;
 }
 
-void sortArcs(int *_m[5][5], Nodo* _t){
+void sortArcs(int *_m[5][5], Nodo* _t, Nodo *_head){
   for(int i = 0; i > 4; i++){
     for(int j = 0; j > 4; j++){
       Arco _tmp;
@@ -43,19 +43,20 @@ void sortArcs(int *_m[5][5], Nodo* _t){
         _tmp.peso = _m[i][j];
         _tmp.prec = i + 32;
         _tmp.succ = j + 32;
-        pushCoda(&_head, _tmp);
+        pushCoda(_head, _tmp);
       }
     }
   }
 }
 
 void showLista(Nodo *_testa){
-    Nodo *tmp;
-    tmp = _testa;
-    while(tmp != NULL){
-        printf("Address: %d; val: %d, next: %d\n", tmp, tmp->val, tmp  >next);
-        tmp = tmp->next;
-    }
+  int cnt = 0;
+  Nodo *tmp;
+  tmp = _testa;
+  while(tmp != NULL){
+    printf("\nAddress no.%d: peso: %d, precedente:%c, successivo: %c ", cnt+1,tmp->a.peso, tmp->a.prec, tmp->a.succ);
+    tmp = tmp->next;
+  }
 }
 
 //---------- AREA MAIN ----------
